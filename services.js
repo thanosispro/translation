@@ -20,7 +20,7 @@ function getSynonyms(word) {
     try{
     wordnet.lookup(word, (results) => {
       if (!results || results.length === 0) {
-        return reject(new Error("No results found"));
+        return resolve([]);
       }
 
       const synonymsSet = new Set();
